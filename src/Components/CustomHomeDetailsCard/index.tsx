@@ -8,35 +8,40 @@ import { styles } from "./styles";
 type CustomHomeDetailsCardProps = {
   title: string;
   handleOnPress: () => void;
+  status: string;
+  icon: any;
 };
+
+const size = {
+  width: 40,
+  height: 40,
+};
+
 const CustomHomeDetailsCard = ({
   title,
   handleOnPress,
+  icon,
+  status,
 }: CustomHomeDetailsCardProps) => {
   return (
     <View style={styles.parent}>
       <TouchableOpacity style={styles.allDetailsCtr} onPress={handleOnPress}>
-        {/* icons - fullCtr */}
-        <View style={styles.iconCtr}>
-          <Text>ICON</Text>
-        </View>
+        <View style={styles.iconCtr}>{icon(size)}</View>
         <View style={styles.childCtr}>
-          {/* fullCtr */}
           <View style={styles.detailsCtr}>
-            {/* line - statsCtr */}
             <View style={styles.upperCtr}>
-              {/* stats - On/warning */}
-              <View style={styles.textCtr}>
-                {/* statsCtr */}
-                <Text>{title}</Text>
-                <Text>100/900</Text>
+              <View style={styles.descTextCtr}>
+                <Text style={styles.titleText}>{title}</Text>
+                <Text style={styles.descriptionText}>{status}</Text>
               </View>
               <View style={styles.buttonCtr}>
-                <Text>On</Text>
+                <View style={styles.buttonTextCtr}>
+                  <Text style={styles.buttonText}>On</Text>
+                </View>
               </View>
             </View>
             <View style={styles.lineCtr}>
-              <Text>--------</Text>
+              <Text>----------------------------------------</Text>
             </View>
           </View>
         </View>

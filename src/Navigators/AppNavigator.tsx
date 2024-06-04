@@ -8,11 +8,19 @@ import { homeStackParamList } from "../Defs/navigators";
 
 // navigators
 import HomeNavigator from "./HomeDrawerNavigator";
+import { COLORS, STRING } from "../Constants";
 
 const Stack = createNativeStackNavigator<homeStackParamList>();
 const AppNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="HomeNavigator">
+    <Stack.Navigator
+      initialRouteName="HomeNavigator"
+      screenOptions={{
+        headerBackTitle: STRING.APP_NAVIGATOR.BACK,
+        headerStyle: { backgroundColor: COLORS.PRIMARY.DARK_GREY },
+        headerShadowVisible: false,
+      }}
+    >
       <Stack.Screen
         name="HomeNavigator"
         component={HomeNavigator}

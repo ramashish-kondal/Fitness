@@ -3,15 +3,16 @@ import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 // custom
-import { STRING } from "../../../Constants";
+import { ICONS, STRING } from "../../../Constants";
 import { styles } from "./styles";
 import { CustomHomeDetailsCard } from "../../../Components";
 import { HomeScreenProps } from "../../../Defs";
 
 const HomeScreen = ({ navigation }: HomeScreenProps) => {
-  const goToNutrition = () => {
-    navigation.push("Nutrition");
-  };
+  const goToNutrition = (): void => navigation.push("Nutrition");
+  const goToWaterIntake = (): void => navigation.push("WaterIntake");
+  const goToDailySteps = (): void => navigation.push("DailySteps");
+
   return (
     <View style={styles.parent}>
       <Text style={styles.titleText}>{STRING.HOME_SCREEN.TITLE}</Text>
@@ -23,10 +24,26 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
           {STRING.HOME_SCREEN.MORE_DETAILS}
         </Text>
       </TouchableOpacity>
-      <CustomHomeDetailsCard
-        title={"nutrition"}
-        handleOnPress={goToNutrition}
-      />
+      <View style={styles.catageroiesCtr}>
+        <CustomHomeDetailsCard
+          title={STRING.HOME_SCREEN.NUTRITION}
+          handleOnPress={goToNutrition}
+          icon={ICONS.Nutrition}
+          status="100 cal/ 900 cal"
+        />
+        <CustomHomeDetailsCard
+          title={STRING.HOME_SCREEN.WATER}
+          handleOnPress={goToWaterIntake}
+          icon={ICONS.Water}
+          status="100 cal/ 900 cal"
+        />
+        <CustomHomeDetailsCard
+          title={STRING.HOME_SCREEN.DAILY_STEPS}
+          handleOnPress={goToDailySteps}
+          icon={ICONS.ManWalking}
+          status="100 cal/ 900 cal"
+        />
+      </View>
     </View>
   );
 };

@@ -26,4 +26,7 @@ export const styles = StyleSheet.create({
     marginHorizontal: 36,
     ...SPACING.mt3,
   },
+  catageroiesCtr: {
+    ...SPACING.mt5,
+  },
 });

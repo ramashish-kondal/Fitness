@@ -19,6 +19,9 @@ import Community from "../Assets/Svgs/community.svg";
 import Notification from "../Assets/Svgs/bell.svg";
 import Premium from "../Assets/Svgs/crown.svg";
 import LogOut from "../Assets/Svgs/logout.svg";
+import Nutrition from "../Assets/Svgs/nutrition.svg";
+import Water from "../Assets/Svgs/water.svg";
+import ManWalking from "../Assets/Svgs/manWalking.svg";
 
 import {
   Avatar1,
@@ -70,8 +73,16 @@ const DRAWER = {
   LogOut: (params: iconProps) => LogOut({ ...iconStyle({ ...params }) }),
 };
 
+const HOME_SCREEN = {
+  Nutrition: (params: iconProps) => Nutrition({ ...iconStyle({ ...params }) }),
+  Water: (params: iconProps) => Water({ ...iconStyle({ ...params }) }),
+  ManWalking: (params: iconProps) =>
+    ManWalking({ ...iconStyle({ ...params }) }),
+};
+
 export const ICONS = {
   ...DRAWER,
+  ...HOME_SCREEN,
   LeftArrow: (params: iconProps) => LeftArrow({ ...iconStyle({ ...params }) }),
   Logo: (params: iconProps) => Logo({ ...iconStyle({ ...params }) }),
   User: (params: iconProps) => User({ ...iconStyle({ ...params }) }),

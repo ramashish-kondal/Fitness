@@ -6,6 +6,7 @@ export const COLORS = {
   PRIMARY: {
     GREY: "#F4F6FA",
     PURPLE: "#7265E3",
+    LIGHT_PURPLE: "#E1DDF5",
     DARK_GREY: "#ECECEC",
   },
   SECONDARY: {

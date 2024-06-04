@@ -69,8 +69,14 @@ export const STRING = {
     DESCRIPTION:
       "Eat the right amount of food and stay hydrated through the day",
     MORE_DETAILS: "More details",
+    NUTRITION: "Nutrition",
+    WATER: "Water",
+    DAILY_STEPS: "Daily Steps",
   },
   SETTINGS: {
     TITLE: "Settings",
+  },
+  APP_NAVIGATOR: {
+    BACK: "Back",
   },
 };
